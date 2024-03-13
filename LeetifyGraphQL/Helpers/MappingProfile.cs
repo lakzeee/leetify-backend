@@ -16,8 +16,8 @@ public class MappingProfile : Profile
             .ForMember(
                 dest => dest.IsPremium,
                 opt => opt.MapFrom(src => src.IsPremium == "1"));
-
-        CreateMap<CreatePlanInput, Plan>();
+        CreateMap<CreatePlanInput, Plan>()
+            .ForMember(dest => dest.PlanQuestions, opt => opt.Ignore());
         CreateMap<PlanQuestionInput, PlanQuestion>()
             .ForMember(dest => dest.Question, opt => opt.Ignore());
     }

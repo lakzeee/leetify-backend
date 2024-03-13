@@ -28,9 +28,9 @@ public static class DbInitializer
             var config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = true,
-                HeaderValidated = null, // Ignore header validation issues
-                MissingFieldFound = null, // Optionally ignore missing fields
-                PrepareHeaderForMatch = args => args.Header.Trim().ToLower() // Adjust to match property naming
+                HeaderValidated = null,
+                MissingFieldFound = null,
+                PrepareHeaderForMatch = args => args.Header.Trim().ToLower()
             };
             using var reader = new StreamReader(csvFilePath);
             using var csv = new CsvReader(reader, config);

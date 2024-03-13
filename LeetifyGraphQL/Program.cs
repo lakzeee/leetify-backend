@@ -1,10 +1,14 @@
 using LeetifyGraphQL.Data;
+using LeetifyGraphQL.Data.Repositories;
+using LeetifyGraphQL.Data.Repositories.Impl;
 using LeetifyGraphQL.GraphQL.Mutations;
 using LeetifyGraphQL.GraphQL.Queries;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IPlanRepository, PlanRepository>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddDbContext<LeetifyDbContext>(opt =>

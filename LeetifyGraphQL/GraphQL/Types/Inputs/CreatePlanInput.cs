@@ -3,11 +3,11 @@ namespace LeetifyGraphQL.GraphQL.Types.Inputs;
 public class CreatePlanInput
 {
     public required string Name { get; set; }
-    public string? Tags { get; set; }
-    public string? Description { get; set; }
+    public string Tags { get; set; }
+    public string Description { get; set; }
     public bool IsPublic { get; set; }
-    public string? CreatedByUserSub { get; set; }
-    public List<PlanQuestionInput>? PlanQuestions { get; set; }
+    public string CreatedByUserSub { get; set; }
+    public List<PlanQuestionInput> PlanQuestions { get; set; }
 }
 
 public class PlanQuestionInput
